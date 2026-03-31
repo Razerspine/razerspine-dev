@@ -1,0 +1,13 @@
+.DS_Store
+.idea
+_ignore
+
+# Ignore all lock files by default
+package-lock.json
+
+# Ignore dependencies and builds everywhere
+node_modules
+dist
+coverage
+coverage.lcov
+public

@@ -1,0 +1,87 @@
+extends @views/layout/simple.pug
+include @views/mixins/code.pug
+
+block variables
+  - title = 'MPA Template';
+
+append style
+  link(rel='stylesheet' href='./style.scss')
+
+append script
+  script(src='./home.ts')
+
+block content
+  section.section.m-b-4
+    .container
+      h1.title-h1.m-b-1.text-gradient-deep.text-center Create App Template
+      p.title-h5.slate-500.text-center Production-ready frontend application
+
+  section.section.m-b-4
+    .container
+      .card.card--padding.d-flex.flex-center
+        h3.title-h5.text-center.m-b-1 🟢 App is running successfully
+        p.title-h5.slate-500.text-center Webpack development server is active and ready.
+
+  section.section.m-b-4
+    .container
+      .card.card--padding
+        ul.template-meta
+          li.template-meta__row
+            span.title-h5.text-gradient-soft App Type:
+            span.title-h5(data-bind='appType')
+          li.template-meta__row
+            span.title-h5.text-gradient-soft Script:
+            span.title-h5(data-bind='script')
+          li.template-meta__row
+            span.title-h5.text-gradient-soft Style:
+            span.title-h5(data-bind='style')
+          li.template-meta__row
+            span.title-h5.text-gradient-soft Version:
+            span.title-h5(data-bind='version')
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 What’s Included
+      .row.row--gap-25
+        .col-12.col-md-6.col-lg-3
+          .card
+            h3.title-h4.m-b-2.text-gradient-soft Build System
+            p
+              | Powered by @razerspine/build with defineConfig API,
+              | SPA/MPA modes, smart hosting adapters and extensible architecture.
+        .col-12.col-md-6.col-lg-3
+          .card
+            h3.title-h4.m-b-2.text-gradient-soft Runtime Engine
+            p
+              | Lightweight @razerspine/runtime with DI container,
+              | SPA Router, reactive view engine and component lifecycle.
+        .col-12.col-md-6.col-lg-3
+          .card
+            h3.title-h4.m-b-2.text-gradient-soft Flexible Architecture
+            p
+              | Supports both SPA and MPA with clear separation
+              | between build layer, runtime logic and UI components.
+        .col-12.col-md-6.col-lg-3
+          .card
+            h3.title-h4.m-b-2.text-gradient-soft Standalone Projects
+            p
+              | Generated apps are fully independent and production-ready,
+              | with zero runtime dependency on the CLI.
+
+  section.section
+    .container
+      h1.title-h2.m-b-2 What next
+      .content
+        .d-flex.flex-row
+          p.title-h6.m-r-1 Add new pages in:
+          +code('text-inline') views/pages
+        .d-flex.flex-row
+          p.title-h6.m-r-1 Add translations in:
+          +code('text-inline') assets/i18n
+        .d-flex.flex-row
+          p.title-h6.m-r-1 Use aliases like:
+          +code('text-inline') @views
+          +code('text-inline') @styles
+          +code('text-inline') @scripts
+          +code('text-inline') @images
+          +code('text-inline') @icons

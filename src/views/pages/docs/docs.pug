@@ -12,10 +12,11 @@ block content
   section.section.m-b-4
     .container
       h1.title-h1.m-b-2.text-gradient-deep.text-center Documentation
-      p.title-h5.slate-500.text-center.m-b-2
+      p.title-h5.slate-500.text-center.m-b-4
         | Learn how to use each part of the ecosystem to build modern frontend applications
-      .d-flex.flex-center
-        +code('text-inline') npx @razerspine/create-app my-app
+      .card.m-b-2
+        +code('bash', 'Terminal', true)
+          | npx @razerspine/create-app my-app
 
   section.section.m-b-4
     .container
@@ -30,8 +31,8 @@ block content
     .container
       h2.title-h2.m-b-4 Quick Start
 
-      .card.card--padding
-        +code('block')
+      .card
+        +code('bash', 'Terminal', true)
           | npx @razerspine/create-app my-app
           | cd my-app
           | npm install
@@ -98,8 +99,9 @@ block content
       p.title-h5.m-b-2
         | The ecosystem is built around clear separation of concerns
 
-      .card.card--padding.text-center
-        +code('text-inline') create-app → build → runtime → ui
+      .card
+        +code('text', 'Text')
+          | create-app → build → runtime → ui
 
   section.section
     .container

@@ -29,8 +29,8 @@ block content
     .container
       h2.title-h2.m-b-4 Quick Start
 
-      .card.card--padding
-        +code('block')
+      .card
+        +code('bash', 'Terminal', true)
           | npx @razerspine/create-app my-app
           | cd my-app
           | npm install
@@ -133,27 +133,27 @@ block content
       h2.title-h2.m-b-4 What You Get
 
       .row.row--gap-25
-        .col-12.col-md-6.col-lg-3
+        .col-12.col-md-6
           .card
             h3.title-h4.m-b-2.text-gradient-soft Build System
             p
               | Flexible configuration via defineConfig API.
 
-        .col-12.col-md-6.col-lg-3
+        .col-12.col-md-6
           .card
             h3.title-h4.m-b-2.text-gradient-soft Runtime Engine
             p
               | Component lifecycle, bindings
               | and reactive state.
 
-        .col-12.col-md-6.col-lg-3
+        .col-12.col-md-6
           .card
             h3.title-h4.m-b-2.text-gradient-soft SPA & MPA
             p
               | Works for both architectures
               | out of the box.
 
-        .col-12.col-md-6.col-lg-3
+        .col-12.col-md-6
           .card
             h3.title-h4.m-b-2.text-gradient-soft Standalone Apps
             p
@@ -164,27 +164,27 @@ block content
       h2.title-h2.m-b-4 Use Cases
 
       .row.row--gap-25
-        .col-12.col-md-3
+        .col-12.col-md-6
           .card
             h3.title-h4.m-b-2.text-gradient-soft Static Sites
             p
               | Build fast static websites with full control.
 
-        .col-12.col-md-3
+        .col-12.col-md-6
           .card
             h3.title-h4.m-b-2.text-gradient-soft SPA Applications
             p
               | Create reactive applications
               | without heavy frameworks.
 
-        .col-12.col-md-3
+        .col-12.col-md-6
           .card
             h3.title-h4.m-b-2.text-gradient-soft Design Systems
             p
               | Build reusable UI systems
               | with SCSS/LESS and components.
 
-        .col-12.col-md-3
+        .col-12.col-md-6
           .card
             h3.title-h4.m-b-2.text-gradient-soft Internal Tools
             p
@@ -195,18 +195,20 @@ block content
     .container
       h2.title-h2.m-b-4 Architecture
 
-      p.title-h5.m-b-2
-        | Each package has a clear responsibility and can work independently
-
-      .card.card--padding.text-center
-        +code('text-inline') create-app → build → runtime → UI
+      .card
+        p.title-h5.m-b-2
+          | Each package has a clear responsibility and can work independently
+        .w-100
+          +code('text', 'Text')
+            | create-app → build → runtime → UI
 
   section.section
     .container
       h2.title-h2.m-b-4 Get Started
 
       .card
-        p.title-h5.slate-500.m-b-3
+        p.title-h5.m-b-2
           | Create your first project in seconds
-        .d-flex
-          +code('text-inline') npx @razerspine/create-app my-app
+        .w-100
+          +code('bash', 'Terminal', true)
+            | npx @razerspine/create-app my-app

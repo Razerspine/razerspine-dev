@@ -1,0 +1,70 @@
+extends @views/layout/index.pug
+include @views/mixins/code.pug
+
+block variables
+  - title = 'Templates - Frontend tooling ecosystem';
+
+append style
+  link(rel='stylesheet' href='./style.scss')
+
+block content
+  section.section.m-b-4
+    .container
+      h1.title-h1.m-b-2.text-gradient-deep.text-center Templates
+      p.title-h5.slate-500.text-center
+        | Preconfigured project templates for different architectures and setups
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-3 Template Matrix
+
+      .card.card--padding
+        +code('text', 'Templates', false)
+          | SPA  + SCSS + TS  → spa-pug-scss-ts
+          | SPA  + SCSS + JS  → spa-pug-scss-js
+          | SPA  + LESS + TS  → spa-pug-less-ts
+          | SPA  + LESS + JS  → spa-pug-less-js
+          |
+          | MPA  + SCSS + TS  → mpa-pug-scss-ts
+          | MPA  + SCSS + JS  → mpa-pug-scss-js
+          | MPA  + LESS + TS  → mpa-pug-less-ts
+          | MPA  + LESS + JS  → mpa-pug-less-js
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 SPA Templates
+
+      .card
+        p.title-h5.m-b-2
+          | SPA templates include full runtime integration with routing and reactivity.
+
+        ul
+          li DI container
+          li SPA Router
+          li Reactive state
+          li Component lifecycle
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 MPA Templates
+
+      .card
+        p.title-h5.m-b-2
+          | MPA templates generate independent pages with webpack multi-entry setup.
+
+        ul
+          li No client-side routing
+          li Static HTML output
+          li Fast and lightweight
+          li Ideal for SEO and landing pages
+
+  section.section
+    .container
+      h2.title-h2.m-b-4 Usage
+
+      .card
+        +code('bash', 'CLI', true)
+          | npx @razerspine/create-app my-app \
+          |   --app-type spa \
+          |   --style scss \
+          |   --script ts

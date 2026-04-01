@@ -1,0 +1,73 @@
+extends @views/layout/index.pug
+include @views/mixins/code.pug
+
+block variables
+  - title = 'Runtime - Frontend tooling ecosystem';
+
+append style
+  link(rel='stylesheet' href='./style.scss')
+
+block content
+  section.section.m-b-4
+    .container
+      h1.title-h1.m-b-2.text-gradient-deep.text-center Runtime
+      p.title-h5.slate-500.text-center
+        | Lightweight frontend runtime for SPA applications without frameworks
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Quick Start
+
+      .card
+        +code('ts', 'Bootstrap', true)
+          | import { bootstrapApplication, provideRouter } from '@razerspine/runtime';
+          |
+          | bootstrapApplication({
+          |   providers: [
+          |     provideRouter([
+          |       { path: '/', component: HomePage }
+          |     ])
+          |   ]
+          | });
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Core Features
+      .row.row--gap-25
+        .col-12.col-md-6
+          .card
+            h3.title-h4.text-gradient-soft.m-b-2 DI Container
+            p Strict dependency injection system
+
+        .col-12.col-md-6
+          .card
+            h3.title-h4.text-gradient-soft.m-b-2 Router
+            p SPA navigation with guards
+
+        .col-12.col-md-6
+          .card
+            h3.title-h4.text-gradient-soft.m-b-2 Reactivity
+            p Proxy-based reactive state
+
+        .col-12.col-md-6
+          .card
+            h3.title-h4.text-gradient-soft.m-b-2 Components
+            p Lifecycle-driven architecture
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Component Example
+      .card
+        +code('ts', 'Component', true)
+          | export class HomePage extends BaseComponent {
+          |   increment() {
+          |     this.setState({ count: this.state.count + 1 });
+          |   }
+          | }
+
+  section.section
+    .container
+      h2.title-h2.m-b-4 Architecture
+      .card
+        +code('text', 'Modules', false)
+          | core → router → reactivity → view → http → platform

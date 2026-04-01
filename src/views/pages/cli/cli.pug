@@ -1,0 +1,53 @@
+extends @views/layout/index.pug
+include @views/mixins/code.pug
+
+block variables
+  - title = 'CLI - Frontend tooling ecosystem';
+
+append style
+  link(rel='stylesheet' href='./style.scss')
+
+block content
+
+  section.section.m-b-4
+    .container
+      h1.title-h1.m-b-2.text-gradient-deep.text-center CLI
+      p.title-h5.slate-500.text-center
+        | Project scaffolding tool for creating ready-to-use applications
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Quick Start
+      .card
+        +code('bash', 'Terminal', true)
+          | npx @razerspine/create-app my-app
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Options
+      .card
+        +code('text', 'CLI Flags', false)
+          | --app-type spa | mpa
+          | --style scss | less
+          | --script js | ts
+          | --pm npm | pnpm | yarn | bun
+          | --no-install
+          | --dry-run
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Non-interactive Mode
+      .card
+        +code('bash', 'CI Usage', true)
+          | npx @razerspine/create-app my-app \
+          |   --app-type spa \
+          |   --style scss \
+          |   --script ts \
+          |   --no-install
+
+  section.section
+    .container
+      h2.title-h2.m-b-4 How It Works
+      .card
+        +code('text', 'Pipeline', false)
+          | resolve template → copy files → patch package.json → install

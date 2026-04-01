@@ -1,0 +1,68 @@
+extends @views/layout/index.pug
+include @views/mixins/code.pug
+
+block variables
+  - title = 'Build System - Frontend tooling ecosystem';
+
+append style
+  link(rel='stylesheet' href='./style.scss')
+
+block content
+
+  section.section.m-b-4
+    .container
+      h1.title-h1.m-b-2.text-gradient-deep.text-center Build System
+      p.title-h5.slate-500.text-center
+        | Modular webpack abstraction with plugin-based architecture
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Define Config
+
+      .card
+        +code('js', 'webpack.config.js', true)
+          | const { defineConfig } = require('@razerspine/build');
+          |
+          | module.exports = defineConfig({
+          |   appType: 'spa',
+          |   scripts: 'ts',
+          |   styles: 'scss'
+          | });
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Features
+      .row.row--gap-25
+        .col-12.col-md-6
+          .card
+            h3.title-h4.text-gradient-soft.m-b-2 Plugins
+            p Lifecycle-based plugin system
+
+        .col-12.col-md-6
+          .card
+            h3.title-h4.text-gradient-soft.m-b-2 Templates
+            p Pug / HTML / none support
+
+        .col-12.col-md-6
+          .card
+            h3.title-h4.text-gradient-soft.m-b-2 Hosting
+            p Auto-detection for Vercel, Netlify, GitHub Pages
+
+        .col-12.col-md-6
+          .card
+            h3.title-h4.text-gradient-soft.m-b-2 Modes
+            p SPA and MPA support
+
+  section.section
+    .container
+      h2.title-h2.m-b-4 Plugins Example
+
+      .card
+        +code('js', 'Plugin', true)
+          | buildPlugins: [
+          |   {
+          |     applyBase(config) {
+          |       // extend config
+          |     }
+          |   }
+          | ]

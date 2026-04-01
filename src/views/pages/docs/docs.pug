@@ -1,0 +1,132 @@
+extends @views/layout/index.pug
+include @views/mixins/code.pug
+
+block variables
+  - title = 'Documentation - Frontend tooling ecosystem';
+
+append style
+  link(rel='stylesheet' href='./style.scss')
+
+block content
+
+  section.section.m-b-4
+    .container
+      h1.title-h1.m-b-2.text-gradient-deep.text-center Documentation
+      p.title-h5.slate-500.text-center.m-b-2
+        | Learn how to use each part of the ecosystem to build modern frontend applications
+      .d-flex.flex-center
+        +code('text-inline') npx @razerspine/create-app my-app
+
+  section.section.m-b-4
+    .container
+      p.m-b-2
+        | This documentation covers a modular frontend tooling ecosystem composed of independent packages
+        | for build configuration, runtime logic, UI components, and project scaffolding.
+      p
+        | Each package can be used separately or combined into a flexible workflow without framework lock-in,
+        | providing full control over architecture and application structure.
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Quick Start
+
+      .card.card--padding
+        +code('block')
+          | npx @razerspine/create-app my-app
+          | cd my-app
+          | npm install
+          | npm run dev
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Core Packages
+
+      .row.row--gap-25
+
+        .col-12.col-md-6
+          .card.card--space-between
+            h3.title-h4.m-b-2.text-gradient-soft CLI
+            p.m-b-2
+              | Scaffolding tool for generating production-ready projects
+              | with predefined templates and smart configuration.
+
+            a.link.btn.btn--outline.btn--medium(href='https://www.npmjs.com/package/@razerspine/create-app' target='_blank' rel='noopener noreferrer')
+              | View package
+              svg.button-icon.icon--icon-small(role='img')
+                use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
+
+        .col-12.col-md-6
+          .card.card--space-between
+            h3.title-h4.m-b-2.text-gradient-soft Build
+            p.m-b-2
+              | Webpack abstraction layer with defineConfig API,
+              | plugin system and hosting integration.
+
+            a.link.btn.btn--outline.btn--medium(href='https://www.npmjs.com/package/@razerspine/build' target='_blank' rel='noopener noreferrer')
+              | View package
+              svg.button-icon.icon--icon-small(role='img')
+                use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
+
+        .col-12.col-md-6
+          .card.card--space-between
+            h3.title-h4.m-b-2.text-gradient-soft Runtime
+            p.m-b-2
+              | Lightweight runtime engine with dependency injection,
+              | router, reactivity and template bindings.
+
+            a.link.btn.btn--outline.btn--medium(href='https://www.npmjs.com/package/@razerspine/runtime' target='_blank' rel='noopener noreferrer')
+              | View package
+              svg.button-icon.icon--icon-small(role='img')
+                use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
+
+        .col-12.col-md-6
+          .card.card--space-between
+            h3.title-h4.m-b-2.text-gradient-soft UI
+            p.m-b-2
+              | UI layer with compiled CSS, SCSS/LESS sources
+              | and Pug component library.
+
+            a.link.btn.btn--outline.btn--medium(href='https://www.npmjs.com/package/@razerspine/ui' target='_blank' rel='noopener noreferrer')
+              | View package
+              svg.button-icon.icon--icon-small(role='img')
+                use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Architecture
+
+      p.title-h5.m-b-2
+        | The ecosystem is built around clear separation of concerns
+
+      .card.card--padding.text-center
+        +code('text-inline') create-app → build → runtime → ui
+
+  section.section
+    .container
+      h2.title-h2.m-b-4 Next Steps
+
+      .row.row--gap-25
+        .col-12.col-md-4
+          .card.card--space-between
+            h3.title-h4.m-b-2.text-gradient-soft Getting Started
+            p.m-b-2 Learn how to create and run your first project
+            a.link.btn.btn--outline.btn--medium(href='getting-started.html') Read
+              svg.button-icon.icon--icon-small(role='img')
+                use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
+
+        .col-12.col-md-4
+          .card.card--space-between
+            h3.title-h4.m-b-2.text-gradient-soft Examples
+            p.m-b-2 Explore real usage examples and templates
+            a.link.btn.btn--outline.btn--medium(href='/examples.html') View
+              svg.button-icon.icon--icon-small(role='img')
+                use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
+
+        .col-12.col-md-4
+          .card.card--space-between
+            h3.title-h4.m-b-2.text-gradient-soft GitHub
+            p.m-b-2 Browse source code and contribute
+            a.link.btn.btn--outline.btn--medium(href='https://github.com/Razerspine/razerspine-stack' target='_blank' rel='noopener noreferrer')
+              | Open
+              svg.button-icon.icon--icon-small(role='img')
+                use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')

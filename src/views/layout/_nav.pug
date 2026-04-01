@@ -1,0 +1,24 @@
+include ~pug-mixins/btn.pug
+
+nav#drawer.navigation
+  +btn(
+    null,
+    'icon',
+    'icon-medium',
+    {
+      class: 'js-nav-toggle nav-button',
+      'aria-label': 'Close Navigation'
+    },
+    'close'
+  )
+
+  .navigation__wrapper
+    p.navigation__title.title-h1.text-gradient-soft.m-b-2 Navigation
+
+    ul.navigation__list
+      li.navigation__item
+        a.navigation__link(href='/') Home
+      li.navigation__item
+        a.navigation__link(href='/docs') Docs
+      li.navigation__item
+        a.navigation__link(href='/examples') Examples

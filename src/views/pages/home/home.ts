@@ -1,27 +1,13 @@
-import pkg from '../../../../package.json';
 import {createStore, applyBindings, ConsoleLogger} from '@razerspine/runtime';
 
-type PackageType = {
-  templateMeta: string;
-  version: string;
-  description?: string;
-  [key: string]: any;
-};
-
-interface HomeState {
-  appType: string;
-  script: string;
-  style: string;
-  version: string;
-  description: string;
-}
+interface HomeState {}
 
 export class HomePage {
   private logger = new ConsoleLogger();
-  private state: HomeState;
+  private readonly state: HomeState;
 
   constructor() {
-    const initialData = this.getPackageMeta(pkg);
+    const initialData = {};
     const {state} = createStore(initialData, () => this.update());
     this.state = state;
 
@@ -37,18 +23,6 @@ export class HomePage {
 
   private update(): void {
     applyBindings(document.body, this.state);
-  }
-
-  private getPackageMeta(data: PackageType): HomeState {
-    const parts = data?.templateMeta.split('-');
-
-    return {
-      appType: parts?.includes('spa') ? 'SPA' : 'MPA',
-      script: parts?.includes('ts') ? 'TypeScript' : 'JavaScript',
-      style: parts?.includes('scss') ? 'SCSS' : 'Less',
-      version: data?.version || '',
-      description: data?.description || '',
-    };
   }
 }
 

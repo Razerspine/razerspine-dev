@@ -1,8 +1,42 @@
 - const date = new Date().getFullYear();
 
 footer.footer
-  .container.p-t-2.p-b-2
-    .d-flex.flex-row.flex-center.w-100.m-b-1
-      span.footer__text.slate-500 Generated with create-app
-    .d-flex.flex-row.flex-center.w-100
-      span.footer__text--bold.text-gradient-soft © #{date} razerspine
+  .container
+    .row.row--gap-25.m-b-4
+
+      .col-12.col-md-4
+        h3.footer__title.title-h5.m-b-2 Resources
+        ul.footer__list
+          li.footer__list-item
+            a.footer__link(href='/docs') Documentation
+          li.footer__list-item
+            a.footer__link(href='/examples') Examples
+          li.footer__list-item
+            a.footer__link(
+              href='https://github.com/Razerspine/razerspine-stack'
+              target='_blank'
+              rel='noopener noreferrer'
+            ) GitHub
+
+      .col-12.col-md-4
+        h3.footer__title.title-h5.m-b-2 Packages
+        ul.footer__list
+          li.footer__list-item
+            a.footer__link(href='https://www.npmjs.com/package/@razerspine/build' target='_blank') @razerspine/build
+          li.footer__list-item
+            a.footer__link(href='https://www.npmjs.com/package/@razerspine/runtime' target='_blank') @razerspine/runtime
+          li.footer__list-item
+            a.footer__link(href='https://www.npmjs.com/package/@razerspine/ui' target='_blank') @razerspine/ui
+          li.footer__list-item
+            a.footer__link(href='https://www.npmjs.com/package/@razerspine/create-app' target='_blank') @razerspine/create-app
+
+      .col-12.col-md-4
+        h3.footer__title.title-h5.m-b-2 About
+        p.footer__text.slate-500
+          | A set of independent frontend tools designed
+          | for flexibility, performance and full control
+          | over application architecture.
+
+    .footer-row
+      span.footer__text.brand-500 © #{date} razerspine
+      span.footer__text.brand-500 Powered by @razerspine/create-app

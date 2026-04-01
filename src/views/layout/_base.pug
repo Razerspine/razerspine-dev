@@ -2,11 +2,27 @@ block variables
   - title = title || '';
 
 doctype html
-html(lang='en' dir='ltr')
+html(lang='en' dir='ltr' data-theme='dark')
   head
     //- Meta
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='description' content='A modular frontend tooling ecosystem with build system, runtime, UI components and CLI. Create modern web applications without heavy frameworks.')
+    meta(name='robots' content='index, follow')
+    meta(name='theme-color' content='#0f172a')
+
+    //- Open Graph
+    meta(property='og:title' content=title)
+    meta(property='og:description' content='Modular frontend tooling ecosystem with build system, runtime, UI layer and CLI for building modern web applications.')
+    meta(property='og:type' content='website')
+
+    //- Twitter
+    meta(name='twitter:card' content='summary_large_image')
+    meta(name='twitter:title' content=title)
+    meta(name='twitter:description' content='Frontend tooling ecosystem with build system, runtime, UI and CLI.')
+
+    //- Canonical
+    link(rel='canonical' href='https://razerspine.dev/')
 
     //- Using favicon generator
     link(rel='icon' type='image/png' href=require('@images/favicons/favicon-96x96.png') sizes='96x96')
@@ -14,7 +30,10 @@ html(lang='en' dir='ltr')
     link(rel='shortcut icon' href=require('@images/favicons/favicon.ico'))
     link(rel='apple-touch-icon' sizes='180x180' href=require('@images/favicons/apple-touch-icon.png'))
     link(rel='manifest' href=require('@images/favicons/site.webmanifest'))
-    
+
+    // - Material google icons
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=clear,dark_mode,done,favorite,home,info,light_mode,menu,search,settings&display=block')
+
     //- Page title
     title= title
 
@@ -24,7 +43,7 @@ html(lang='en' dir='ltr')
     //- Additional head block to add here page specifically assets
     block head
 
-  body.layout
+  body#app-root.layout-simple
     //- Body content
     block body
 

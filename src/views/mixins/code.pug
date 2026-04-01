@@ -1,5 +1,14 @@
-mixin code(lang)
-  - let cls = lang ? 'language-' + lang : ''
-  pre(class=cls)
-    code(class=cls)
-      block
+mixin code(lang, filename, showCopy = false)
+  - let langClass = lang ? 'language-' + lang : 'language-plaintext'
+  .code-window
+    if filename || showCopy
+      .code-window-header
+        if filename
+          span.code-window-title= filename
+        if showCopy
+          button.code-copy-btn(type='button' title='Copy to clipboard')
+            | Copy
+    .code-window-body
+      pre(class=langClass)
+        code(class=langClass)
+          block

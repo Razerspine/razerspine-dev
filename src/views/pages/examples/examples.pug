@@ -1,0 +1,113 @@
+extends @views/layout/index.pug
+include @views/mixins/code.pug
+
+block variables
+  - title = 'Examples - Frontend tooling ecosystem';
+
+append style
+  link(rel='stylesheet' href='./style.scss')
+
+block content
+  section.section.m-b-4
+    .container
+      h1.title-h1.m-b-2.text-gradient-deep.text-center Examples
+      p.title-h5.slate-500.text-center.m-b-2
+        | Real usage examples of the runtime, templates and build system
+      p.title-h6.brand-500.text-center.m-b-2
+        | SPA → MPA → Reactive state → Router → DI
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Quick Start
+      .card.m-b-2
+        +code('bash', 'Terminal', true)
+          | npx @razerspine/create-app my-app
+          | cd my-app
+          | npm install
+          | npm run dev
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 SPA Example
+      p.title-h5.m-b-2
+        | Full application powered by runtime: router, DI, lifecycle and reactive state
+      .card.m-b-2
+        +code('ts', 'app.ts', true)
+          | import { bootstrapApplication, provideRouter } from '@razerspine/runtime';
+          |
+          | bootstrapApplication({
+          |   providers: [
+          |     provideRouter([
+          |       { path: '/', component: HomePage }
+          |     ])
+          |   ]
+          | });
+      .card.m-b-2
+        +code('ts', 'component.ts', true)
+          | export class HomePage extends BaseComponent {
+          |   increment() {
+          |     this.setState({ count: this.state.count + 1 });
+          |   }
+          | }
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Router & Guards
+      .card.m-b-2
+        +code('ts', 'routes.ts', true)
+          | const routes = [
+          |   { path: '/', component: HomePage },
+          |   { path: '/dashboard', component: DashboardPage, canActivate: [authGuard] }
+          | ];
+
+      .card.m-b-2
+        +code('ts', 'guard.ts', true)
+          | const authGuard = () => {
+          |   return isLoggedIn ? true : '/login';
+          | };
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 MPA Example
+      p.title-h5.m-b-2
+        | Lightweight reactive page without router and component system
+      .card.m-b-2
+        +code('ts', 'home.ts', true)
+          | const { state } = createStore(
+          |   { title: 'Hello MPA', count: 0 },
+          |   () => update()
+          | );
+          |
+          | function update() {
+          |   applyBindings(document.body, state);
+          | }
+      .card.m-b-2
+        +code('pug', 'template.pug', false)
+          | h1(data-bind="title")
+          | button(data-click="increment") +
+          | span(data-bind="count")
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 SPA vs MPA
+      .card
+        +code('text', 'Comparison', false)
+          | SPA → Router + Components + Lifecycle (automatic)
+          | MPA → Manual setup + no router + independent pages
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4 Reactivity Flow
+      .card
+        +code('text', 'Flow', false)
+          | createStore → Proxy → state change → applyBindings → DOM update
+
+  section.section
+    .container
+      h2.title-h2.m-b-4 Template System
+      .card.m-b-2
+        +code('text', 'Templates', false)
+          | SPA + SCSS + TS → spa-pug-scss-ts
+          | MPA + LESS + JS → mpa-pug-less-js
+      p.title-h5.slate-500
+        | Templates are resolved automatically based on CLI flags

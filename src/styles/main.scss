@@ -222,6 +222,14 @@ html {
   border-radius: 4px;
   padding: 15px 20px;
 
+  &--code-block {
+    box-shadow: none;
+    background: var(--bg-color);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   &--space-between {
     justify-content: space-between;
   }

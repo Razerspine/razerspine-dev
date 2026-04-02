@@ -193,3 +193,64 @@ block content
         | The bindings engine processes directives in a strict order. Structural changes like
         | data-for must be applied first to ensure correct DOM updates. Mixing manual DOM
         | manipulation with bindings may lead to inconsistent UI state.
+
+  section.section.m-b-4
+    .container(data-animate='fade-up' data-animate-delay='200')
+      h2.title-h2.m-b-4 Advanced Patterns & Best Practices
+      .description.m-b-4
+        p.m-b-1
+          | This section describes recommended architectural patterns and best practices
+          | for building scalable applications using the runtime. These patterns are based
+          | on real-world usage and internal runtime behavior.
+        p.m-b-1
+          | Following these guidelines helps maintain predictable data flow, improves
+          | performance and prevents common architectural mistakes when working with
+          | reactive state, dependency injection and routing.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='300')
+        h3.title-h4.m-b-2.text-gradient-soft Keep Components Stateless Where Possible
+        p
+          | Move business logic into services instead of components. Components should
+          | focus on rendering and user interaction, while services handle data and side effects.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='300')
+        h3.title-h4.m-b-2.text-gradient-soft Use DI for Shared Logic
+        p
+          | Always register shared services in the DI container and access them via inject().
+          | This ensures a single source of truth and avoids duplicated logic across components.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='300')
+        h3.title-h4.m-b-2.text-gradient-soft Avoid Direct State Mutation
+        p
+          | Always use setState() instead of mutating state directly. This guarantees that
+          | the reactive system triggers DOM updates correctly.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='300')
+        h3.title-h4.m-b-2.text-gradient-soft Keep State Minimal
+        p
+          | Store only the data required for rendering. Derived values should be computed
+          | inside methods instead of being stored in the reactive state.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='300')
+        h3.title-h4.m-b-2.text-gradient-soft Handle Async in onInit
+        p
+          | Perform API calls and async operations inside onInit(). The lifecycle supports
+          | async execution and ensures proper rendering flow.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='300')
+        h3.title-h4.m-b-2.text-gradient-soft Clean Up Side Effects
+        p
+          | Always clean up intervals, subscriptions or manual listeners inside onDestroy()
+          | to prevent memory leaks, especially in SPA navigation.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='300')
+        h3.title-h4.m-b-2.text-gradient-soft Use Router for Navigation
+        p
+          | Avoid manipulating window.location manually. Use Router.navigate() to keep
+          | navigation consistent and lifecycle-safe.
+
+      .card(data-animate='fade-up' data-animate-delay='300')
+        h3.title-h4.m-b-2.text-gradient-soft Split Large Features
+        p
+          | Break large pages into smaller logical units and services. This improves
+          | maintainability and aligns with the modular runtime architecture.

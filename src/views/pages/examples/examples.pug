@@ -18,16 +18,6 @@ block content
 
   section.section.m-b-4
     .container
-      h2.title-h2.m-b-4 Quick Start
-      .card.m-b-2
-        +code('bash', 'Terminal', true)
-          | npx @razerspine/create-app my-app
-          | cd my-app
-          | npm install
-          | npm run dev
-
-  section.section.m-b-4
-    .container
       h2.title-h2.m-b-4 SPA Example
       p.title-h5.m-b-2
         | Full application powered by runtime: router, DI, lifecycle and reactive state
@@ -102,7 +92,7 @@ block content
         +code('text', 'Flow', false)
           | createStore → Proxy → state change → applyBindings → DOM update
 
-  section.section
+  section.section.m-b-4
     .container
       h2.title-h2.m-b-4 Template System
       .card.m-b-2
@@ -111,3 +101,15 @@ block content
           | MPA + LESS + JS → mpa-pug-less-js
       p.title-h5.slate-500
         | Templates are resolved automatically based on CLI flags
+
+  section.section
+    .container
+      h2.title-h2.m-b-4 Getting Started
+      .card
+        p.title-h5.m-b-2
+          | To create a new project using the CLI, follow the quick start guide.
+
+        a.link.btn.btn--outline.btn--medium(href='/cli.html')
+          | Open CLI Guide
+          svg.button-icon.icon--icon-small(role='img')
+            use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')

@@ -14,29 +14,47 @@ block content
       h1.title-h1.m-b-2.text-gradient-deep.text-center Documentation
       p.title-h5.slate-500.text-center.m-b-4
         | Learn how to use each part of the ecosystem to build modern frontend applications
-      .card.m-b-2
-        +code('bash', 'Terminal', true)
-          | npx @razerspine/create-app my-app
+      .description
+        p.m-b-1
+          | This documentation provides a complete overview of a modular frontend tooling ecosystem
+          | designed for building modern web applications without relying on heavy frameworks.
+          | It explains how individual packages work together to handle project scaffolding,
+          | build configuration, runtime logic, and UI composition.
+        p.m-b-1
+          | Each part of the system can be used independently, allowing developers to adopt only what they need
+          | while maintaining full control over architecture and tooling decisions.
+          | The CLI simplifies project creation, templates provide a production-ready foundation,
+          | the build system manages bundling and environment configuration,
+          | and the runtime enables reactive state, routing, and component lifecycle for SPA applications.
+        p.m-b-1
+          | The ecosystem supports both SPA and MPA approaches, making it suitable for dynamic applications,
+          | static websites, and hybrid solutions.
+          | This documentation is structured to help you quickly understand core concepts,
+          | explore individual packages, and apply them in real-world projects.
 
   section.section.m-b-4
     .container
-      p.m-b-2
-        | This documentation covers a modular frontend tooling ecosystem composed of independent packages
-        | for build configuration, runtime logic, UI components, and project scaffolding.
-      p
-        | Each package can be used separately or combined into a flexible workflow without framework lock-in,
-        | providing full control over architecture and application structure.
-
-  section.section.m-b-4
-    .container
-      h2.title-h2.m-b-4 Quick Start
-
+      h2.title-h2.m-b-4 How to Navigate
       .card
-        +code('bash', 'Terminal', true)
-          | npx @razerspine/create-app my-app
-          | cd my-app
-          | npm install
-          | npm run dev
+        p.title-h5.m-b-2
+          | The documentation is organized around the core parts of the ecosystem.
+        p.brand-500.m-b-2
+          | Start with Getting Started to create your first project,
+          | then explore individual packages depending on your needs.
+
+        ul
+          li
+            strong CLI:
+            |  project creation and scaffolding
+          li
+            strong Templates:
+            |  project structure and configuration
+          li
+            strong Runtime:
+            |  application logic, routing and reactivity
+          li
+            strong Build:
+            |  bundling, configuration and deployment
 
   section.section.m-b-4
     .container

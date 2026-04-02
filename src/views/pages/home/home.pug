@@ -202,13 +202,14 @@ block content
           +code('text', 'Text')
             | create-app → build → runtime → UI
 
-  section.section
+  section.section.m-b-4
     .container
-      h2.title-h2.m-b-4 Get Started
-
+      h2.title-h2.m-b-4 Getting Started
       .card
         p.title-h5.m-b-2
-          | Create your first project in seconds
-        .w-100
-          +code('bash', 'Terminal', true)
-            | npx @razerspine/create-app my-app
+          | To create a new project using the CLI, follow the quick start guide.
+
+        a.link.btn.btn--outline.btn--medium(href='/cli.html')
+          | Open CLI Guide
+          svg.button-icon.icon--icon-small(role='img')
+            use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')

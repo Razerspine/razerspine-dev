@@ -13,44 +13,36 @@ block content
       h1.title-h1.m-b-2.text-gradient-deep.text-center Getting Started
       p.title-h5.slate-500.m-b-2.text-center
         | Learn how to create and run your first project using the Razerspine ecosystem
-      p.title-h5.brand-500.text-center
+      p.title-h5.brand-500.text-center.m-b-4
         | CLI → Templates → Runtime → Build system
+      .description
+        p.m-b-1
+          | This guide walks you through the process of creating and running your first project
+          | using a modular frontend tooling ecosystem built around independent packages.
+          | You will learn how to scaffold an application with the CLI, understand how templates are structured,
+          | and see how build and runtime layers work together.
+        p.m-b-1
+          | The system supports both SPA and MPA architectures, allowing you to choose the approach
+          | that best fits your project requirements.
+          | Generated projects come preconfigured with a scalable structure, modern tooling,
+          | and production-ready defaults.
+        p.m-b-1
+          | The build system handles asset bundling and environment configuration,
+          | while the runtime provides reactive state, routing, and component lifecycle for SPA applications.
+          | This separation of concerns ensures flexibility, maintainability, and full control over your architecture.
+          | By the end of this guide, you will have a clear understanding of how all parts of the ecosystem fit together.
 
   section.section.m-b-4
     .container
-      h2.title-h2.m-b-4 Installation
+      h2.title-h2.m-b-4 Create Your First Project
       .card
-        p.title-h6.m-b-2
-          | You can create a new project using the CLI without installing anything globally.
+        p.title-h5.m-b-2
+          | To create a new project using the CLI, follow the quick start guide.
 
-        .w-100.m-b-2
-          +code('bash', 'Terminal', true)
-            | npx @razerspine/create-app my-app
-
-        p.slate-500
-          | The CLI will guide you through project setup using interactive prompts.
-
-  section.section.m-b-4
-    .container
-      h2.title-h2.m-b-4 Create Application
-      .card.card--padding
-        p.title-h6.m-b-2
-          | Interactive mode allows you to choose application type, styles and scripts.
-
-        .w-100.m-b-2
-          +code('bash', 'Terminal', true)
-            | npx @razerspine/create-app my-app
-
-        p.title-h6.m-b-2
-          | For CI or automation, you can use non-interactive mode:
-
-        .w-100.m-b-2
-          +code('bash', 'Terminal', true)
-            | npx @razerspine/create-app my-app \
-            |   --app-type spa \
-            |   --style scss \
-            |   --script ts \
-            |   --no-install
+        a.link.btn.btn--outline.btn--medium(href='/cli.html')
+          | Open CLI Guide
+          svg.button-icon.icon--icon-small(role='img')
+            use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
 
   section.section.m-b-4
     .container

@@ -58,13 +58,14 @@ block content
           li Fast and lightweight
           li Ideal for SEO and landing pages
 
-  section.section
+  section.section.m-b-4
     .container
-      h2.title-h2.m-b-4 Usage
-
+      h2.title-h2.m-b-4 Getting Started
       .card
-        +code('bash', 'CLI', true)
-          | npx @razerspine/create-app my-app \
-          |   --app-type spa \
-          |   --style scss \
-          |   --script ts
+        p.title-h5.m-b-2
+          | To create a new project using the CLI, follow the quick start guide.
+
+        a.link.btn.btn--outline.btn--medium(href='/cli.html')
+          | Open CLI Guide
+          svg.button-icon.icon--icon-small(role='img')
+            use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')

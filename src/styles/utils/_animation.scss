@@ -1,0 +1,36 @@
+[data-animate] {
+  pointer-events: none;
+  transition-duration: 900ms;
+  transition-delay: 0ms;
+  transition-timing-function: ease-out;
+  transition-property: opacity, transform;
+  opacity: 0;
+
+  &.is-animate {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateZ(0) !important;
+  }
+}
+
+[data-animate='fade-up'] {
+  transform: translateY(30px);
+}
+
+[data-animate='fade-down'] {
+  transform: translateY(-30px);
+}
+
+[data-animate='fade-right'] {
+  transform: translateX(-30px);
+}
+
+[data-animate='fade-left'] {
+  transform: translateX(30px);
+}
+
+@for $i from 1 through 10 {
+  [data-animate][data-animate-delay="#{$i * 100}"] {
+    transition-delay: #{$i * 100}ms;
+  }
+}

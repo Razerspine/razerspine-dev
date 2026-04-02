@@ -33,6 +33,11 @@ html {
   min-width: 0;
   min-height: 100%;
   padding: 3rem 0;
+
+  .description {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
 }
 
 .text-gradient-soft {

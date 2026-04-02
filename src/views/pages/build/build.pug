@@ -12,8 +12,29 @@ block content
   section.section.m-b-4
     .container
       h1.title-h1.m-b-2.text-gradient-deep.text-center Build System
-      p.title-h5.slate-500.text-center
+      p.title-h5.slate-500.text-center.m-b-4
         | Modular webpack abstraction with plugin-based architecture
+      .description
+        p.m-b-1
+          | The build system is a modular abstraction over webpack designed to simplify configuration
+          | while preserving full control over the build process. It provides a single entry point
+          | through the defineConfig API, allowing developers to configure projects in a predictable
+          | and scalable way. The system supports both SPA and MPA architectures, making it flexible
+          | for different types of frontend applications.
+        p.m-b-1
+          | Built-in template handling supports Pug,
+          | HTML or fully custom setups without templates. A plugin-based architecture enables safe
+          | extension of the build pipeline without breaking core functionality. Developers can hook
+          | into different lifecycle stages such as base, development and production builds. The build
+          | system also includes a smart hosting adapter that automatically generates configuration
+          | for platforms like Vercel, Netlify and GitHub Pages. This reduces deployment complexity
+          | and ensures compatibility with modern hosting environments.
+        p.m-b-1
+          | The configuration is fully
+          | typed and optimized for developer experience with clear defaults and minimal boilerplate.
+          | At the same time, advanced users can extend webpack rules, plugins and internal behavior
+          | when needed. This makes the build system suitable for both simple projects and complex
+          | production applications.
 
   section.section.m-b-4
     .container

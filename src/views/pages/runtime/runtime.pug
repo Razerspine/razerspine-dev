@@ -88,9 +88,108 @@ block content
           |   }
           | }
 
-  section.section
+  section.section.m-b-4
     .container(data-animate='fade-down' data-animate-delay='200')
       h2.title-h2.m-b-4 Architecture
       .card
         +code('text', 'Modules', false)
           | core → router → reactivity → view → http → platform
+
+  section.section.m-b-4
+    .container
+      h2.title-h2.m-b-4(data-animate='fade-up') Common Mistakes & Anti-patterns
+      p.title-h5.m-b-4(data-animate='fade-up' data-animate-delay='100')
+        | Common pitfalls when working with the runtime and how to avoid them
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='200')
+        +code('text', 'DI Container', false)
+          | ❌ Injecting service without registering it
+          | ✔ Always provide services in bootstrapApplication()
+          |
+          | ❌ Expecting automatic instantiation
+          | ✔ Runtime uses strict DI mode (no auto new)
+          |
+          | ❌ Circular dependencies between services
+          | ✔ Keep services isolated and avoid cross-dependency loops
+
+      p.description.m-b-4(data-animate='fade-up' data-animate-delay='250')
+        | The DI container works in strict mode. Services are not auto-created and must be explicitly
+        | registered during bootstrap. If a service is missing, the runtime will throw an error
+        | instead of silently failing, making configuration issues easier to detect.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='300')
+        +code('text', 'State Management', false)
+          | ❌ Direct state mutation outside of setState
+          | ✔ Always use setState() for predictable updates
+          |
+          | ❌ Replacing state object entirely
+          | ✔ State is Proxy-based and must remain stable
+          |
+          | ❌ Mutating deeply without understanding reactivity
+          | ✔ Use structured updates to keep UI in sync
+
+      p.description.m-b-4(data-animate='fade-up' data-animate-delay='350')
+        | The reactive system is based on Proxy. Direct mutation may work, but breaks predictable
+        | update flow. setState() ensures controlled updates and keeps rendering consistent.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='400')
+        +code('text', 'Component Lifecycle', false)
+          | ❌ Performing async logic inside render()
+          | ✔ Use onInit() for async operations
+          |
+          | ❌ Forgetting cleanup for manual subscriptions
+          | ✔ Use onDestroy() for cleanup
+          |
+          | ❌ Manipulating DOM outside render()
+          | ✔ Let bindings handle DOM updates
+
+      p.description.m-b-4(data-animate='fade-up' data-animate-delay='450')
+        | The lifecycle is strictly ordered: render → bind events → update → onInit.
+        | Async logic should be placed in onInit() to avoid inconsistent rendering behavior.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='500')
+        +code('text', 'Router', false)
+          | ❌ Calling Router before bootstrap completes
+          | ✔ Router is initialized inside bootstrapApplication
+          |
+          | ❌ Ignoring guard return types
+          | ✔ Guards must return true | false | redirect string
+          |
+          | ❌ Assuming navigation errors will crash app
+          | ✔ Router handles errors internally
+
+      p.description.m-b-4(data-animate='fade-up' data-animate-delay='550')
+        | The Router is designed to be fault-tolerant. Navigation errors are caught internally
+        | and do not break the application lifecycle. Optional error handlers can be attached
+        | for custom UI behavior.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='600')
+        +code('text', 'MPA Mode', false)
+          | ❌ Forgetting to call applyBindings()
+          | ✔ Must be called manually after state updates
+          |
+          | ❌ Using bindForms without applyBindings
+          | ✔ They work together as a pair
+          |
+          | ❌ Not cleaning up listeners
+          | ✔ Always remove listeners to avoid memory leaks
+
+      p.description.m-b-4(data-animate='fade-up' data-animate-delay='650')
+        | In MPA mode, lifecycle is fully manual. You must initialize bindings,
+        | attach event handlers and handle cleanup yourself. Forgetting cleanup
+        | may lead to memory leaks or duplicated listeners.
+
+      .card.m-b-4(data-animate='fade-up' data-animate-delay='700')
+        +code('text', 'Bindings Engine', false)
+          | ❌ Relying on incorrect processing order
+          | ✔ data-for always runs before other bindings
+          |
+          | ❌ Mixing manual DOM updates with bindings
+          | ✔ Let applyBindings control DOM synchronization
+          |
+          | ❌ Misusing data-model on unsupported elements
+          | ✔ Use proper input types for two-way binding
+
+      p.description.m-b-4(data-animate='fade-up' data-animate-delay='750')
+        | The bindings engine processes directives in a strict order. Structural changes like
+        | data-for must be applied first to ensure correct DOM updates. Mixing manual DOM
+        | manipulation with bindings may lead to inconsistent UI state.

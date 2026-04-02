@@ -189,7 +189,7 @@ block content
           | ❌ Misusing data-model on unsupported elements
           | ✔ Use proper input types for two-way binding
 
-      p.description.m-b-4(data-animate='fade-up' data-animate-delay='750')
+      p.description(data-animate='fade-up' data-animate-delay='750')
         | The bindings engine processes directives in a strict order. Structural changes like
         | data-for must be applied first to ensure correct DOM updates. Mixing manual DOM
         | manipulation with bindings may lead to inconsistent UI state.

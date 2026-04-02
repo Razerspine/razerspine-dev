@@ -122,8 +122,121 @@ block content
       p.title-h5.slate-500
         | Templates are resolved automatically based on CLI flags
 
+  section.section.m-b-4
+    .container(data-animate='fade-right' data-animate-delay='200')
+      h2.title-h2.m-b-4 Advanced Runtime Example
+      p.title-h5.m-b-2
+        | Real-world example with API requests, dependency injection and reactive state
+
+      .card.m-b-2
+        +code('ts', 'user.service.ts', true)
+          | import { ApiService } from '@razerspine/runtime';
+          |
+          | export class UserService {
+          |   private api = new ApiService('https://api.example.com');
+          |
+          |   async getUsers() {
+          |     return this.api.get('/users');
+          |   }
+          | }
+
+      .card.m-b-2
+        +code('ts', 'component.ts', true)
+          | import { BaseComponent, inject } from '@razerspine/runtime';
+          | import { UserService } from './user.service';
+          |
+          | export class UsersPage extends BaseComponent {
+          |   private userService = inject(UserService);
+          |
+          |   constructor(container) {
+          |     super(container, { users: [], loading: true });
+          |   }
+          |
+          |   protected async onInit() {
+          |     const users = await this.userService.getUsers();
+          |     this.setState({ users, loading: false });
+          |   }
+          | }
+
+      .card
+        +code('pug', 'template.pug', false)
+          | section
+          |   h1 Users
+          |
+          |   div(data-show="loading") Loading...
+          |
+          |   ul(data-for="user:users")
+          |     li(data-bind="user.name")
+
+  section.section.m-b-4
+    .container(data-animate='fade-left' data-animate-delay='300')
+      h2.title-h2.m-b-4 Dependency Injection & Navigation
+
+      p.title-h5.m-b-2
+        | Using injected services for navigation and business logic
+
+      .card
+        +code('ts', 'login.ts', true)
+          | import { inject, Router } from '@razerspine/runtime';
+          |
+          | export class LoginPage {
+          |   private router = inject(Router);
+          |
+          |   onLoginSuccess() {
+          |     this.router.navigate('/dashboard');
+          |   }
+          | }
+
+  section.section.m-b-4
+    .container(data-animate='fade-right' data-animate-delay='200')
+      h2.title-h2.m-b-4 Platform Services
+
+      p.title-h5.m-b-2
+        | Built-in services for theming and internationalization
+
+      .card
+        +code('ts', 'platform.ts', true)
+          | import { ThemeService, TranslationService } from '@razerspine/runtime';
+          |
+          | const theme = new ThemeService();
+          | theme.init();
+          | theme.setTheme('dark');
+          |
+          | const i18n = new TranslationService({
+          |   en: { greeting: { hello: 'Hello' } },
+          |   uk: { greeting: { hello: 'Привіт' } }
+          | });
+          |
+          | i18n.init();
+
+  section.section.m-b-4
+    .container(data-animate='fade-left' data-animate-delay='300')
+      h2.title-h2.m-b-4 Reactive Flow
+
+      p.title-h5.m-b-2
+        | Internal data flow from user interaction to DOM updates
+
+      .card
+        +code('text', 'Flow', false)
+          | user event
+          |   → method call
+          |   → state mutation
+          |   → Proxy intercept
+          |   → update()
+          |   → applyBindings()
+          |   → DOM update
+
+  section.section.m-b-4
+    .container(data-animate='fade-up' data-animate-delay='100')
+      h2.title-h2.m-b-4 When to Use SPA vs MPA
+
+      .card
+        +code('text', 'Use Cases', false)
+          | SPA → dashboards, admin panels, complex UI
+          | MPA → landing pages, marketing sites, SEO-driven content
+
   section.section
-    .container(data-animate='fade-down' data-animate-delay='200')
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Getting Started
       .card
         p.title-h5.m-b-2

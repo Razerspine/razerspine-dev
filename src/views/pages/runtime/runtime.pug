@@ -9,7 +9,7 @@ append style
 
 block content
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-down' data-animate-delay='200')
       h1.title-h1.m-b-2.text-gradient-deep.text-center Runtime
       p.title-h5.slate-500.text-center.m-b-2
         | Lightweight frontend runtime for SPA applications without frameworks
@@ -39,9 +39,8 @@ block content
           | without sacrificing performance or flexibility.
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Quick Start
-
       .card
         +code('ts', 'Bootstrap', true)
           | import { bootstrapApplication, provideRouter } from '@razerspine/runtime';
@@ -59,27 +58,27 @@ block content
       h2.title-h2.m-b-4 Core Features
       .row.row--gap-25
         .col-12.col-md-6
-          .card
+          .card(data-animate='fade-right' data-animate-delay='100')
             h3.title-h4.text-gradient-soft.m-b-2 DI Container
             p Strict dependency injection system
 
         .col-12.col-md-6
-          .card
+          .card(data-animate='fade-left' data-animate-delay='200')
             h3.title-h4.text-gradient-soft.m-b-2 Router
             p SPA navigation with guards
 
         .col-12.col-md-6
-          .card
+          .card(data-animate='fade-right' data-animate-delay='300')
             h3.title-h4.text-gradient-soft.m-b-2 Reactivity
             p Proxy-based reactive state
 
         .col-12.col-md-6
-          .card
+          .card(data-animate='fade-left' data-animate-delay='400')
             h3.title-h4.text-gradient-soft.m-b-2 Components
             p Lifecycle-driven architecture
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Component Example
       .card
         +code('ts', 'Component', true)
@@ -90,7 +89,7 @@ block content
           | }
 
   section.section
-    .container
+    .container(data-animate='fade-down' data-animate-delay='200')
       h2.title-h2.m-b-4 Architecture
       .card
         +code('text', 'Modules', false)

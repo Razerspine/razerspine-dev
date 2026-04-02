@@ -10,7 +10,7 @@ append style
 block content
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-down' data-animate-delay='200')
       h1.title-h1.m-b-2.text-gradient-deep.text-center Build System
       p.title-h5.slate-500.text-center.m-b-4
         | Modular webpack abstraction with plugin-based architecture
@@ -37,7 +37,7 @@ block content
           | production applications.
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Define Config
 
       .card
@@ -55,27 +55,27 @@ block content
       h2.title-h2.m-b-4 Features
       .row.row--gap-25
         .col-12.col-md-6
-          .card
+          .card(data-animate='fade-right' data-animate-delay='200')
             h3.title-h4.text-gradient-soft.m-b-2 Plugins
             p Lifecycle-based plugin system
 
         .col-12.col-md-6
-          .card
+          .card(data-animate='fade-right' data-animate-delay='200')
             h3.title-h4.text-gradient-soft.m-b-2 Templates
             p Pug / HTML / none support
 
         .col-12.col-md-6
-          .card
+          .card(data-animate='fade-left' data-animate-delay='200')
             h3.title-h4.text-gradient-soft.m-b-2 Hosting
             p Auto-detection for Vercel, Netlify, GitHub Pages
 
         .col-12.col-md-6
-          .card
+          .card(data-animate='fade-left' data-animate-delay='200')
             h3.title-h4.text-gradient-soft.m-b-2 Modes
             p SPA and MPA support
 
   section.section
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Plugins Example
 
       .card

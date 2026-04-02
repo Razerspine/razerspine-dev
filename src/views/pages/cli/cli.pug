@@ -10,7 +10,7 @@ append style
 block content
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-down' data-animate-delay='200')
       h1.title-h1.m-b-2.text-gradient-deep.text-center CLI
       p.title-h5.slate-500.text-center.m-b-4
         | Project scaffolding tool for creating ready-to-use applications
@@ -25,14 +25,14 @@ block content
         | The CLI focuses on simplicity, flexibility, and predictable project structure.
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Quick Start
       .card
         +code('bash', 'Terminal', true)
           | npx @razerspine/create-app my-app
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-right' data-animate-delay='200')
       h2.title-h2.m-b-4 Options
       .card
         +code('text', 'CLI Flags', false)
@@ -44,7 +44,7 @@ block content
           | --dry-run
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-left' data-animate-delay='200')
       h2.title-h2.m-b-4 Non-interactive Mode
       .card
         +code('bash', 'CI Usage', true)
@@ -55,7 +55,7 @@ block content
           |   --no-install
 
   section.section
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 How It Works
       .card
         +code('text', 'Pipeline', false)

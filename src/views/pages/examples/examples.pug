@@ -9,7 +9,7 @@ append style
 
 block content
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-down' data-animate-delay='200')
       h1.title-h1.m-b-2.text-gradient-deep.text-center Examples
       p.title-h5.slate-500.text-center.m-b-2
         | Real usage examples of the runtime, templates and build system
@@ -37,7 +37,7 @@ block content
           | structure their projects and apply the ecosystem effectively.
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 SPA Example
       p.title-h5.m-b-2
         | Full application powered by runtime: router, DI, lifecycle and reactive state
@@ -61,7 +61,7 @@ block content
           | }
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-down' data-animate-delay='200')
       h2.title-h2.m-b-4 Router & Guards
       .card.m-b-2
         +code('ts', 'routes.ts', true)
@@ -77,7 +77,7 @@ block content
           | };
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 MPA Example
       p.title-h5.m-b-2
         | Lightweight reactive page without router and component system
@@ -98,7 +98,7 @@ block content
           | span(data-bind="count")
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-left' data-animate-delay='200')
       h2.title-h2.m-b-4 SPA vs MPA
       .card
         +code('text', 'Comparison', false)
@@ -106,14 +106,14 @@ block content
           | MPA → Manual setup + no router + independent pages
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-right' data-animate-delay='200')
       h2.title-h2.m-b-4 Reactivity Flow
       .card
         +code('text', 'Flow', false)
           | createStore → Proxy → state change → applyBindings → DOM update
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Template System
       .card.m-b-2
         +code('text', 'Templates', false)
@@ -123,7 +123,7 @@ block content
         | Templates are resolved automatically based on CLI flags
 
   section.section
-    .container
+    .container(data-animate='fade-down' data-animate-delay='200')
       h2.title-h2.m-b-4 Getting Started
       .card
         p.title-h5.m-b-2

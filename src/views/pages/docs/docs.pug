@@ -10,7 +10,7 @@ append style
 block content
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-down' data-animate-delay='200')
       h1.title-h1.m-b-2.text-gradient-deep.text-center Documentation
       p.title-h5.slate-500.text-center.m-b-4
         | Learn how to use each part of the ecosystem to build modern frontend applications
@@ -33,7 +33,7 @@ block content
           | explore individual packages, and apply them in real-world projects.
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 How to Navigate
       .card
         p.title-h5.m-b-2
@@ -63,7 +63,7 @@ block content
       .row.row--gap-25
 
         .col-12.col-md-6
-          .card.card--space-between
+          .card.card--space-between(data-animate='fade-right' data-animate-delay='100')
             h3.title-h4.m-b-2.text-gradient-soft CLI
             p.m-b-2
               | Scaffolding tool for generating production-ready projects
@@ -75,7 +75,7 @@ block content
                 use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
 
         .col-12.col-md-6
-          .card.card--space-between
+          .card.card--space-between(data-animate='fade-left' data-animate-delay='200')
             h3.title-h4.m-b-2.text-gradient-soft Build
             p.m-b-2
               | Webpack abstraction layer with defineConfig API,
@@ -87,7 +87,7 @@ block content
                 use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
 
         .col-12.col-md-6
-          .card.card--space-between
+          .card.card--space-between(data-animate='fade-right' data-animate-delay='300')
             h3.title-h4.m-b-2.text-gradient-soft Runtime
             p.m-b-2
               | Lightweight runtime engine with dependency injection,
@@ -99,7 +99,7 @@ block content
                 use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
 
         .col-12.col-md-6
-          .card.card--space-between
+          .card.card--space-between(data-animate='fade-left' data-animate-delay='400')
             h3.title-h4.m-b-2.text-gradient-soft UI
             p.m-b-2
               | UI layer with compiled CSS, SCSS/LESS sources
@@ -111,7 +111,7 @@ block content
                 use(xlink:href='#icon-arrow-next' href='#icon-arrow-next')
 
   section.section.m-b-4
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Architecture
 
       p.title-h5.m-b-2
@@ -122,9 +122,8 @@ block content
           | create-app → build → runtime → ui
 
   section.section
-    .container
+    .container(data-animate='fade-up' data-animate-delay='200')
       h2.title-h2.m-b-4 Next Steps
-
       .row.row--gap-25
         .col-12.col-md-4
           .card.card--space-between

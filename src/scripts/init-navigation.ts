@@ -1,4 +1,15 @@
 export const initNavigation = (): void => {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.js-nav-link');
+
+  navLinks.forEach((link) => {
+    if (link.pathname === currentPath) {
+      link.classList.add('is-active');
+    } else {
+      link.classList.remove('is-active');
+    }
+  });
+
   const drawer = document.getElementById('drawer');
   const toggleButtons = document.querySelectorAll('.js-nav-toggle');
 

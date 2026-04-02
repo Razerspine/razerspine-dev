@@ -1,0 +1,38 @@
+html {
+  scrollbar-gutter: stable;
+}
+
+#app-root {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+}
+
+.layout-simple {
+  background-image: radial-gradient(circle at 80% 70%, rgba(79, 70, 229, 0.1) 0%, transparent 50%);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+
+  &.disable-scroll {
+    overflow: hidden;
+
+    .backdrop {
+      display: block;
+    }
+  }
+}
+
+.main-simple {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  padding: 3rem 0;
+
+  .description {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+}

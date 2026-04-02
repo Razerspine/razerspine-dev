@@ -1,0 +1,17 @@
+.text-gradient-soft {
+  background: linear-gradient(to right, #6366f1, #4338ca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-deep {
+  background: linear-gradient(90deg, #818cf8 0%, #4f46e5 50%, #3730a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.row {
+  &--gap-25 {
+    gap: 25px;
+  }
+}

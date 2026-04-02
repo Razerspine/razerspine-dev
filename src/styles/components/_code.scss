@@ -1,0 +1,65 @@
+.code-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  min-width: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--bg-color);
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: var(--bg-color);
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-strong);
+    user-select: none;
+  }
+
+  &-body {
+    color: var(--brand-500);
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+
+    pre {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 25px 20px;
+      overflow-x: auto;
+      white-space: pre;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--border-strong);
+        border-radius: 4px;
+
+        &:hover {
+          background: var(--brand-500);
+        }
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    }
+
+    code {
+      display: table;
+      min-width: 100%;
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+}

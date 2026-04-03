@@ -4,7 +4,7 @@ export class HomePage {
   }
 
   private init(): void {
-    console.log('HomePage initialized');
+
   }
 }
 

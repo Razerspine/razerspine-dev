@@ -35,6 +35,7 @@ class StaticAssetsPlugin {
 
                   console.log(`[StaticAssetsPlugin] Emitted: ${to}`);
                 });
+                console.log(`[StaticAssetsPlugin] Done (${this.files.length} files)`);
               },
             );
           },

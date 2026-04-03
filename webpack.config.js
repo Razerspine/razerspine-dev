@@ -34,6 +34,10 @@ module.exports = (env = {}, argv = {}) => {
           {from: 'static/og-image.png', to: 'og-image.png'},
           {from: 'static/robots.txt', to: 'robots.txt'},
           {from: 'static/sitemap.xml', to: 'sitemap.xml'},
+          {
+            from: 'static/google61f7866a032b3f5b.html',
+            to: 'google61f7866a032b3f5b.html',
+          },
         ],
       }),
     ],

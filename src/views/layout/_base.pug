@@ -2,10 +2,21 @@ block variables
   - title = title || '';
   - description = description || 'A modular frontend tooling ecosystem with build system, runtime, UI components and CLI.';
   - canonical = canonical || 'https://razerspine-dev.vercel.app';
+  - gaId = 'G-705RS25ZT9'
 
 doctype html
 html(lang='en' dir='ltr' data-theme='dark')
   head
+    //- Google Analytics (gtag.js)
+    script(async src=`https://www.googletagmanager.com/gtag/js?id=${gaId}`)
+      script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', '#{gaId}');
+
     //- Meta
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')

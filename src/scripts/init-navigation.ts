@@ -1,9 +1,14 @@
+const normalizePath = (path: string): string => {
+  return path.replace(/\/$/, '').replace('.html', '');
+};
+
 export const initNavigation = (): void => {
-  const currentPath = window.location.pathname;
+  const currentPath = normalizePath(window.location.pathname);
   const navLinks = document.querySelectorAll<HTMLAnchorElement>('.js-nav-link');
 
   navLinks.forEach((link) => {
-    if (link.pathname === currentPath) {
+    const linkPath = normalizePath(link.pathname);
+    if (linkPath === currentPath) {
       link.classList.add('is-active');
     } else {
       link.classList.remove('is-active');

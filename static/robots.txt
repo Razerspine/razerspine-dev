@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://razerspine-dev.vercel.app/sitemap.xml

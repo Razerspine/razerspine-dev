@@ -5,6 +5,7 @@ const {
   createProdConfig,
 } = require('@razerspine/build');
 const uiKit = require('@razerspine/ui');
+const StaticAssetsPlugin = require('./plugins/static-assets-plugin');
 
 module.exports = (env = {}, argv = {}) => {
   const mode = argv?.mode || env?.mode || process.env.NODE_ENV || 'development';
@@ -27,6 +28,15 @@ module.exports = (env = {}, argv = {}) => {
         'pug-mixins': uiKit.paths.mixins,
       },
     },
+    buildPlugins: [
+      new StaticAssetsPlugin({
+        files: [
+          {from: 'static/og-image.png', to: 'og-image.png'},
+          {from: 'static/robots.txt', to: 'robots.txt'},
+          {from: 'static/sitemap.xml', to: 'sitemap.xml'},
+        ],
+      }),
+    ],
   });
 
   if (mode === 'development') {

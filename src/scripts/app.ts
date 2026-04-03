@@ -1,4 +1,4 @@
-import {ConsoleLogger} from '@razerspine/runtime';
+import {ConsoleLogger} from '@razerspine/runtime/utils';
 import {initNavigation} from '@scripts/init-navigation';
 import {initCodeCopy} from '@scripts/code-copy';
 import {ScrollAnimation} from '@scripts/scroll-animation';

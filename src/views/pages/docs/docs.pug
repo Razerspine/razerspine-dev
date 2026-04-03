@@ -2,7 +2,9 @@ extends @views/layout/index.pug
 include @views/mixins/code.pug
 
 block variables
-  - title = 'Documentation - Frontend tooling ecosystem';
+  - title = 'Documentation - Razerspine frontend ecosystem'
+  - description = 'Complete documentation for Razerspine ecosystem including CLI, runtime, build system and UI components. Learn architecture, configuration and best practices.'
+  - canonical = 'https://razerspine-dev.vercel.app/docs.html'
 
 append style
   link(rel='stylesheet' href='./style.scss')

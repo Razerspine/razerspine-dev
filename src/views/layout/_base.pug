@@ -1,5 +1,7 @@
 block variables
   - title = title || '';
+  - description = description || 'A modular frontend tooling ecosystem with build system, runtime, UI components and CLI.';
+  - canonical = canonical || 'https://razerspine-dev.vercel.app';
 
 doctype html
 html(lang='en' dir='ltr' data-theme='dark')
@@ -7,22 +9,16 @@ html(lang='en' dir='ltr' data-theme='dark')
     //- Meta
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
-    meta(name='description' content='A modular frontend tooling ecosystem with build system, runtime, UI components and CLI. Create modern web applications without heavy frameworks.')
     meta(name='robots' content='index, follow')
     meta(name='theme-color' content='#0f172a')
-
-    //- Open Graph
+    meta(name='description' content=description)
     meta(property='og:title' content=title)
-    meta(property='og:description' content='Modular frontend tooling ecosystem with build system, runtime, UI layer and CLI for building modern web applications.')
+    meta(property='og:description' content=description)
+    meta(property='og:url' content=canonical)
     meta(property='og:type' content='website')
-
-    //- Twitter
-    meta(name='twitter:card' content='summary_large_image')
     meta(name='twitter:title' content=title)
-    meta(name='twitter:description' content='Frontend tooling ecosystem with build system, runtime, UI and CLI.')
-
-    //- Canonical
-    link(rel='canonical' href='https://razerspine.dev/')
+    meta(name='twitter:description' content=description)
+    link(rel='canonical' href=canonical)
 
     //- Using favicon generator
     link(rel='icon' type='image/png' href=require('@images/favicons/favicon-96x96.png') sizes='96x96')

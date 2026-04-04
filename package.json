@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@razerspine/runtime": "^1.0.1",
-    "@razerspine/ui": "^1.0.0"
+    "@razerspine/ui": "^1.0.2"
   },
   "packageManager": "npm@latest"
 }

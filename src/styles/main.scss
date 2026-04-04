@@ -1,4 +1,9 @@
-@use '@razerspine/ui/scss/fonts';
-@use '@razerspine/ui/scss/ui' as *;
+@use 'base' as *;
+@use "@razerspine/ui/scss/settings" with (
+  $font-family: ('Lato', system-ui, sans-serif),
+  $base-font-size: 16px,
+  $container-max: 1280px,
+);
+@use '@razerspine/ui/scss' as *;
 @use 'utils' as *;
 @use 'components' as *;
